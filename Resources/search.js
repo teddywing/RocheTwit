@@ -22,7 +22,7 @@ var row_data = []; // an array to store our result rows in
 var TSearch = {
 	s: function(query) {
 		var request = Titanium.Network.createHTTPClient();
-		request.open('GET', 'http://search.twitter.com/search.json?q=' + query);
+		request.open('GET', 'http://search.twitter.com/search.json?q=' + query.replace('#', '%23')); // Appcelerator URL-encodes automatically, but doesn't always encode hashes ('#'). Twitter wants hashes to be URL-encoded, so we'll make sure they are.
 		
 		request.onload = function() {
 			var results = (eval('(' + this.responseText + ')')).results;
