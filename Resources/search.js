@@ -4,13 +4,13 @@ var win = Titanium.UI.currentWindow;
 
 // Create a search input bar
 var search_input = Titanium.UI.createSearchBar({
-	hintText: 'Enter a search query', // let user know what to type
+	hintText: 'Rechercher sur Twitter', // let user know what to type
 	height: 43,
 	top: 0
 });
 
 var result_table = Titanium.UI.createTableView({
-	top: 43
+	top: 43 // Make sure the tableview is underneath our search bar
 });
 var row_data = []; // an array to store our result rows in
                    // (this gets fed into the result_table)
@@ -90,6 +90,7 @@ var TSearch = {
 };
 
 
+// Event listener on Search button click
 search_input.addEventListener('return', function(e) {
 	TSearch.s(e.value);
 	
