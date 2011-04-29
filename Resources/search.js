@@ -50,6 +50,9 @@ var row_data = []; // an array to store our result rows in
 search_input.addEventListener('return', function(e) {
 	TSearch.s(e.value);
 	
+	// Clear existing row_data
+	row_data = [];
+	
 	var db = Titanium.Database.open('twitsearch');
 	//db.execute('CREATE TABLE IF NOT EXISTS "search_results" (tweet TEXT, user STRING, avatar STRING)');
 	var results = db.execute('SELECT * FROM "search_results"');
@@ -62,7 +65,8 @@ search_input.addEventListener('return', function(e) {
 		var avatar = results.fieldByName('avatar');
 		
 		var row = Titanium.UI.createTableViewRow({
-			height: 'auto'
+			height: 'auto',
+			selectedBackgroundColor: 'transparent'
 		});
 		// tweet_view will contain our tweet elements for a customised TableRow
 		var tweet_view = Titanium.UI.createView({
@@ -113,21 +117,10 @@ search_input.addEventListener('return', function(e) {
 	// Blur search field to hide on-screen keyboard
 	search_input.blur();
 	
-	// Remove old rows from table
-	result_table.setData([]);
 	// Add our new rows to the result TableView
 	result_table.setData(row_data);
 });
 
-var label1 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am Window 1',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
-});
-
-win.add(label1);
 
 win.add(search_input);
 win.add(result_table);
