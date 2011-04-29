@@ -1,18 +1,10 @@
-Welcome to your Appcelerator Titanium Mobile Project
+RocheTwit
+=========
 
-This is a blank project.  Start by editing your application's app.js to 
-make your first mobile project using Titanium.
+RocheTwit is a simple Twitter search application for iPhone built using Appcelerator Titanium. It demonstrates basic elements of the framework including view handling, events, and HTTP requests, and is provided as a learning tool.
 
 
+License
+-------
 
-----------------------------------
-Stuff our legal folk make us say:
-
-Appcelerator, Appcelerator Titanium and associated marks and logos are 
-trademarks of Appcelerator, Inc. 
-
-Titanium is Copyright (c) 2009-2010 by Appcelerator, Inc. All Rights Reserved.
-
-Titanium is licensed under the Apache Public License (Version 2). Please
-see the LICENSE file for the full license.
-
+RocheTwit is released under the MIT license.
